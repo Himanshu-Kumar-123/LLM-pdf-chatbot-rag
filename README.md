@@ -23,11 +23,27 @@ Instead of training a language model on PDFs, the system follows a retrieval-bas
 ---
 
 ## 🏗️ Architecture
+```bash
 
-PDF → Text Extraction → Chunking → Embeddings → Vector Database
-↑
-User Query → Embedding → Retrieval → Context → LLM → Answer
 
+                ┌────────────┐
+                │    PDFs    │
+                └─────┬──────┘
+                      ↓
+              Text Extraction / OCR
+                      ↓
+                 Text Chunking
+                      ↓
+              Embedding Generation
+                      ↓
+              Vector Database
+                      ↑
+User Query → Embedding → Retrieval
+                      ↓
+                  LLM Prompt
+                      ↓
+                   Answer
+```
 
 ---
 
